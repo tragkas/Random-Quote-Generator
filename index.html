@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Random Quote Generator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      #quote {
+        font-size: 36px;
+        margin: 50px;
+      }
+
+      button {
+        font-size: 24px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #1abc9c;
+        color: #fff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="quote"></div>
+    <button id="generate-btn">Generate Quote</button>
+
+    <script>
+      const quotes = [
+        "Believe you can and you're halfway there. -Theodore Roosevelt",
+        "Act as if what you do makes a difference. It does. -William James",
+        "Success is not final, failure is not fatal: it is the courage to continue that counts. -Winston Churchill",
+        "Hardships often prepare ordinary people for an extraordinary destiny. -C.S. Lewis",
+        "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle. -Christian D. Larson",
+        "You are never too old to set another goal or to dream a new dream. -C.S. Lewis"
+      ];
+
+      const quoteElement = document.getElementById("quote");
+      const generateButton = document.getElementById("generate-btn");
+
+      function generateQuote() {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        quoteElement.innerHTML = quotes[randomIndex];
+      }
+
+      generateButton.addEventListener("click", generateQuote);
+    </script>
+  </body>
+</html>
